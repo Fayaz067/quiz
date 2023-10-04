@@ -1,0 +1,46 @@
+<!Doctype html>
+<html>
+    <head>
+
+<style>
+
+</style>
+</head>
+
+<body >
+
+<p id="disname" class="ip"></p>
+<p id="disname" class="ip" style="font-size: 60px; color: rgb(139, 84, 250); text-align:center;">Enter Your Class in :</p>
+<div id="div" style="font-size: 30px; color: rgb(234, 8, 158); text-align:center;"></div>
+
+</body >
+
+
+<script type='text/javascript'>
+    str=localStorage.getItem('var');
+    data=JSON.parse(str);
+    div=document.getElementById('div');
+    buttons=['LKG','UKG','1','2','3','4','5','6','7','8','9','10'];
+for(var i=0;i<12;i++){
+    b=document.createElement('button');
+    id='b'+i
+    b.id=id;
+    b.innerHTML=buttons[i];
+    b.style.height='50px';
+    b.style.width='80px';
+    div.appendChild(b);
+    b.onclick=function(event) {
+    ClickButoon(event.target.innerHTML);
+    };
+};
+
+
+function ClickButoon(id){
+    data.class=id;
+    str=JSON.stringify(data);
+    localStorage.setItem('var1',str)
+    window.location.href='hello.html'
+    }
+</script>
+
+</html>
